@@ -9,15 +9,15 @@ typedef vector<int> vi;
 
 const double PI=acos(-1.0);
 
-
+int N;
 void input()
 {
-    
+    cin>>N;
 }
 
 void solve()
 {
-    
+    cout<<(N+1)/2<<endl;
 }
 
 int main()
