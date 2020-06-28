@@ -21,7 +21,7 @@ int gcd(int a, int b)
     return b;
 }
 
-int N; vll f;
+int N; 
 void input()
 {
     cin>>N;
@@ -29,25 +29,12 @@ void input()
 
 void solve()
 {
-    f.assign(10000010,-1);
-    f[1]=1;
-    for(int i=2;i<N+1;++i){
-        map<int,int> M;
-        int j=2; int tmp_i=i;
-        while(j<=tmp_i){
-            if(tmp_i%j==0){
-                tmp_i/=j; M[j]++; continue;
-            }
-            else ++j;
-        }
-        f[i]=1;
-        for(auto p:M){
-            f[i]*=p.second+1;
-        }
-    }
     ll ans=0;
-    for(int i=1;+i<N+1;++i){
-        ans+=i*f[i];
+    for(int i=1;i<N+1;++i){
+        int j=1;
+        while(i*j<=N){
+            ans+=i*j; ++j;
+        }
     }
     cout<<ans<<endl;
 }
