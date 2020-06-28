@@ -9,15 +9,16 @@ typedef vector<int> vi;
 
 const double PI=acos(-1.0);
 
-
+ll N,A,B;
 void input()
 {
-    
+    cin>>N>>A>>B;
 }
 
 void solve()
 {
-    
+    ll ans=(N/(A+B))*A+min(A,N%(A+B));
+    cout<<ans<<endl;
 }
 
 int main()
