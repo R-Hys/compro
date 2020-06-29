@@ -17,14 +17,27 @@ void input()
 
 void solve()
 {
-    vi count(P,0); count[0]++;
-    int sum=0;
-    for(int i=0;i<N;++i){
-        sum=(sum*10+S[i]-'0')%P;
-        count[sum]++;
+    vi count(P,0); 
+    ll ans=0;
+    if(P==2 || P==5){
+        for(ll i=0;i<N;++i){
+            if((S[i]-'0')%P==0) ans+=i+1ll;
+        }
     }
-    int ans=0;
-    for(int i=0;i<P;++i) ans+=count[i]*(count[i]-1)/2;
+    else{
+        count[0]++;
+        int sum=0;
+        for(int i=0;i<N;++i){
+            sum=((sum*10)%P+(S[i]-'0'))%P;
+            // ans+=(ll)count[sum];
+            count[sum]++;
+        }
+        
+        for(int i=0;i<P;++i) {
+            ans+=count[i]*(count[i]-1)/2;
+            cout<<"i:"<<i<<" "<<count[i]<<"\n";
+        }
+    }
     cout<<ans<<endl;
 }
 
