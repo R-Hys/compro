@@ -4,20 +4,24 @@
 #include <cmath>
 using namespace std;
 
-typedef long long ll;
 typedef vector<int> vi;
 
-const double PI=acos(-1.0);
-
-
+int K,N; vi A;
 void input()
 {
-    
+    cin>>K>>N;
+    for(int i=0;i<N;++i){
+        int a; cin>>a; A.emplace_back(a);
+    }    
 }
 
 void solve()
 {
-    
+    int ans=A[0]+K-A[N-1];
+    for(int i=0;i<N-1;++i){
+        ans=max(ans,A[i+1]-A[i]);
+    }
+    cout<<K-ans<<endl;
 }
 
 int main()

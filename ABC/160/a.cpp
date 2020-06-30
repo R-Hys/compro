@@ -4,20 +4,17 @@
 #include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
-
-
+string S;
 void input()
 {
-    
+    cin>>S;
 }
 
 void solve()
 {
-    
+    string ans="No";
+    if(S[2]==S[3]&&S[4]==S[5]) ans="Yes";
+    cout<<ans<<endl;
 }
 
 int main()

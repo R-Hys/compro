@@ -4,20 +4,19 @@
 #include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
-
-
+int x;
 void input()
 {
-    
+    cin>>x;
 }
 
 void solve()
 {
-    
+    int ans=0;
+    ans+=(x/500)*1000;
+    x%=500;
+    ans+=(x/5)*5;
+    cout<<ans<<endl;
 }
 
 int main()
