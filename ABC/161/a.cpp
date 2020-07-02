@@ -4,20 +4,15 @@
 #include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
-
-
+int x,y,z;
 void input()
 {
-    
+    cin>>x>>y>>z;
 }
 
 void solve()
 {
-    
+    cout<<z<<" "<<x<<" "<<y<<endl;
 }
 
 int main()

@@ -5,19 +5,17 @@
 using namespace std;
 
 typedef long long ll;
-typedef vector<int> vi;
 
-const double PI=acos(-1.0);
-
-
+ll n,k;
 void input()
 {
-    
+    cin>>n>>k;
 }
 
 void solve()
 {
-    
+    n%=k;
+    cout<<min(n,k-n)<<endl;
 }
 
 int main()

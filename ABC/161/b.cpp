@@ -7,17 +7,22 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 
-const double PI=acos(-1.0);
-
-
+int M,N; vi A;
 void input()
 {
-    
+    cin>>N>>M;
+    for(int i=0;i<N;++i){
+        int a;cin>>a;A.emplace_back(a);
+    }
 }
 
 void solve()
 {
-    
+    sort(A.begin(),A.end(),greater<int>());
+    int sum=0;
+    for(int i=0;i<N;++i) sum+=A[i];
+    if(A[M-1]*4*M>=sum) cout<<"Yes"<<endl;
+    else cout<<"No"<<endl;
 }
 
 int main()
