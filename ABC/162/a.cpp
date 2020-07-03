@@ -4,20 +4,22 @@
 #include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
-
-
+int N;
 void input()
 {
-    
+    cin>>N;
 }
 
 void solve()
 {
-    
+    string ans="No";
+    while(N>0){
+        if(N%10==7){
+            ans="Yes"; break;
+        }
+        N/=10;
+    }
+    cout<<ans<<endl;
 }
 
 int main()

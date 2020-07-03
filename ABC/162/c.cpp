@@ -7,17 +7,38 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 
-const double PI=acos(-1.0);
-
-
+int K;
 void input()
 {
-    
+    cin>>K;
+}
+
+int gcd(int a, int b)
+{
+    int c=a%b;
+    while(c!=0){
+        a=b; b=c; c=a%b;
+    }
+    return b;
 }
 
 void solve()
 {
-    
+    int ans=0;
+    for(int i=1;i<=K;++i) ans+=i;
+    for(int i=1;i<K;++i){
+        for(int j=i+1;j<=K;++j){
+            ans+=gcd(i,j)*6;
+        }
+    }
+    for(int i=1;i<=K-2;++i){
+        for(int j=i+1;j<=K-1;++j){
+            for(int k=j+1;k<=K;++k){
+                ans+=gcd(gcd(i,j),k)*6;
+            }
+        }
+    }
+    cout<<ans<<endl;
 }
 
 int main()
