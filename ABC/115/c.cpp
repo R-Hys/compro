@@ -1,23 +1,26 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
+const int INF = 1000000010;
 
-const double PI=acos(-1.0);
-
-
+int K,N; vector<int> h;
 void input()
 {
-    
+    cin >> N >> K;
+    h.resize(N);
+    for(int i=0; i<N; ++i) cin >> h[i];
 }
 
 void solve()
 {
-    
+    sort(h.begin(),h.end());
+    int MIN = INF;
+    for(int i=0; i<=N-K; ++i){
+        MIN = min(MIN,h[i+K-1]-h[i]);
+    }
+    cout << MIN << endl;
 }
 
 int main()

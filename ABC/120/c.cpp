@@ -1,23 +1,21 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
-#include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
-
-
+string S; int N;
 void input()
 {
-    
+    cin >> S;
+    N = S.length();
 }
 
 void solve()
 {
-    
+    int zero = 0, one = 0;
+    for(int i=0; i<N; ++i){
+        if(S[i] == '0') ++zero;
+        else if(S[i] == '1') ++one;
+    }
+    cout << 2*min(zero,one) << endl;
 }
 
 int main()
