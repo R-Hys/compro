@@ -5,14 +5,11 @@
 using namespace std;
 
 typedef long long ll;
-typedef vector<int> vi;
 
-const double PI=acos(-1.0);
-
-
+string S; ll K;
 void input()
 {
-    
+    cin >> S >> K;
 }
 
 void solve()
