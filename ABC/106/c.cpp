@@ -14,7 +14,21 @@ void input()
 
 void solve()
 {
-    
+    char ans;
+    for (int i = 0; i < S.length(); ++i){
+        if (S[i] != '1'){
+            ans = S[i];
+            break;
+        } else {
+            if (K == 1) {
+                ans = S[i];
+                break;
+            } else {
+                --K;
+            }
+        }
+    }
+    cout << ans << endl;
 }
 
 int main()
