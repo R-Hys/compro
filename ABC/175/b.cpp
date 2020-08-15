@@ -1,29 +1,29 @@
 #include <iostream>
+#include <iomanip>
 #include <algorithm>
 #include <vector>
 #include <cmath>
 using namespace std;
 
 typedef long long ll;
-typedef vector<int> vi;
 
-const double PI=acos(-1.0);
-
-int N; vector<int> a;
+int N; vector<ll> L;
 void input()
 {
     cin >> N;
-    a.resize(N);
-    for(int i=0; i<N; ++i) cin >> a[i];
+    L.resize(N);
+    for(int i=0; i<N; ++i) cin >> L[i];
 }
 
 void solve()
 {
-    ll ans = 0;
+    sort(L.begin(),L.end());
+    int ans = 0;
     for(int i=0; i<N; ++i){
-        while(a[i]%2 == 0){
-            a[i] /= 2;
-            ++ans;
+        for(int j=i+1; j<N; ++j){
+            for(int k=j+1; k<N; ++k){
+                if(L[i] < L[j] && L[j] < L[k] && L[i] + L[j] > L[k]) ++ans;
+            }
         }
     }
     cout << ans << endl;
