@@ -31,7 +31,8 @@ void solve()
 
         is_checked[i] = true;
         int next = P[i];
-        vi loop; loop.emplace_back(i);
+        vi loop; 
+        loop.emplace_back(i);
         ll loop_sum = C[i];
         while (next != i){
             loop.emplace_back(next);
@@ -40,20 +41,29 @@ void solve()
             next = P[next];
         }
 
-        cout << "group: ";
-        for (int j = 0; j < loop.size(); ++j) cout << loop[j]+1 << " ";
-        cout << "loop_sum: " << loop_sum << endl;
+        // cout << "group: ";
+        // for (int j = 0; j < loop.size(); ++j) cout << loop[j]+1 << " ";
+        // cout << "loop_sum: " << loop_sum << endl;
 
         for (int j = 0; j < loop.size(); ++j){
-            ll ma_i = -INF; int mv_i = 0;
+            ll sum; int move;
+            if (loop_sum <= 0){
+                sum = 0; 
+                move = K;
+            } else {
+                sum = ((K / loop.size()) - 1) * loop_sum; 
+                move = K % loop.size() + loop.size();
+            }
+
+            // cout << "sum: " << sum << " move: " << move << endl;
+
+            ll ma_i = -INF; 
             next = P[loop[j]];
-            ll sum = 0; int move = K;
             while (next != loop[j] && move > 0){
                 sum += C[next];
                 --move;
                 if (ma_i < sum){
                     ma_i = sum;
-                    mv_i = K - move;
                 }
                 next = P[next];
             }
@@ -62,17 +72,23 @@ void solve()
                 --move;
                 if (ma_i < sum){
                     ma_i = sum;
-                    mv_i = K - move;
                 }
+                next = P[next];
+            }
+            while (next != loop[j] && move > 0){
+                sum += C[next];
+                --move;
+                if (ma_i < sum){
+                    ma_i = sum;
+                }
+                next = P[next];
             }
 
-            cout << loop[j]+1 << " " << ma_i << " " << mv_i << " " << (K - mv_i) / loop.size() << endl;
-            if (K - mv_i > 0 && loop_sum > 0){
-                ma_i += ((K - mv_i) / loop.size()) * loop_sum; 
-            }
+            // cout << loop[j]+1 << " " << ma_i << endl;
+            
             ma = max (ma, ma_i);
         }
-        cout << endl;
+        // cout << endl;
     }
 
     cout << ma << endl;

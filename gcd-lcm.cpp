@@ -2,6 +2,12 @@
 #include <vector>
 using namespace std;
 
+
+/*
+#include <algorithm>
+GCD = __gcd(a,b)
+で使える
+*/
 int gcd(int a, int b)
 {
     int c=a%b;
