@@ -1,23 +1,22 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
-#include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
-
-
+long long N,M;
 void input()
 {
-    
+    cin >> N >> M;
 }
 
 void solve()
 {
-    
+    if (N >= 2 && M >= 2){
+        cout << (N-2) * (M-2) << endl;
+    } else if (N == 1 && M == 1) {
+        cout << 1 << endl;
+    } else {
+        cout << max(N,M) - 2 << endl;
+    }
 }
 
 int main()

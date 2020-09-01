@@ -3,12 +3,8 @@
 #include <algorithm>
 #include <vector>
 #include <cmath>
+#include <ctime>
 using namespace std;
-
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
 
 
 void input()
@@ -25,7 +21,9 @@ int main()
 {
     cin.tie();
     ios::sync_with_stdio(false);
+    // int ti = clock();
     input();
     solve();
+    // printf("Execution Time: %.4lf sec\n", 1.0 * (clock() - ti) / CLOCKS_PER_SEC);
     return 0;
 }

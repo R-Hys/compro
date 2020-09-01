@@ -1,23 +1,21 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
-#include <cmath>
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-const double PI=acos(-1.0);
-
-
+int A,B,C,X,Y;
 void input()
 {
-    
+    cin >> A >> B >> C >> X >> Y;
 }
 
 void solve()
 {
-    
+    int MIN = min(X,Y);
+    int ans = min(A + B, C * 2) * MIN;
+    X -= MIN;
+    Y -= MIN;
+    ans += min(A, C * 2) * X + min(B, C * 2) * Y;
+    cout << ans << endl;
 }
 
 int main()

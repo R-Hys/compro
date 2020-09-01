@@ -5,13 +5,12 @@ using namespace std;
 int main()
 {   
     static const char alphanum[] =
-        "0123456789"
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz";
 
     srand((unsigned)time(NULL));
 
-    int N = rand() % 100;
+    int N = rand() % 5000+1;
+    // int N = 5000;
 
     string s;
     s.resize(N);
@@ -19,6 +18,6 @@ int main()
         s[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
     }
 
-    cout << N << " " << s << endl;
+    cout << s << "\n3" << endl;
     return 0;
 }
