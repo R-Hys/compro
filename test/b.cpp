@@ -1,15 +1,20 @@
 #include <iostream>
+#include <set>
 using namespace std;
 
-int a,b,c; string s;
+string s;
 void input()
 {
-    cin >> a >> b >> c >> s;
+    cin >> s;
 }
 
 void solve()
 {
-    cout << a+b+c << " " << s << endl;
+    set<char> st;
+    for (int i = 0; i < s.size(); ++i){
+        st.insert(s[i]);
+    }
+    cout << st.size() << endl;
 }
 
 int main()

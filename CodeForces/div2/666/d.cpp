@@ -1,15 +1,20 @@
 #include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <vector>
+#include <cmath>
+#include <ctime>
 using namespace std;
 
-int a,b,c; string s;
+
 void input()
 {
-    cin >> a >> b >> c >> s;
+    
 }
 
 void solve()
 {
-    cout << a+b+c << " " << s << endl;
+    
 }
 
 int main()

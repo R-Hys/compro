@@ -1,15 +1,16 @@
 #include <iostream>
 using namespace std;
 
-int a,b,c; string s;
+int N,K;
 void input()
 {
-    cin >> a >> b >> c >> s;
+    cin >> N >> K;
 }
 
 void solve()
 {
-    cout << a+b+c << " " << s << endl;
+    if ((N * 12) % K == 0) cout << "Yes" << endl;
+    else cout << "No" << endl;
 }
 
 int main()
