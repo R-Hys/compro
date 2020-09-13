@@ -11,14 +11,12 @@ int main()
 
     srand((unsigned)time(NULL));
 
-    int N = rand() % 100;
-
-    string s;
-    s.resize(N);
-    for (int i = 0; i < N; ++i) {
-        s[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+    int N = rand() % 49 + 2;
+    int M = 10;
+    cout << N << " " << M << endl;
+    for (int i = 0; i < M; ++i) {
+        cout << rand()%N+1 << " " << rand()%N+1 << endl;
     }
-
-    cout << N << " " << s << endl;
+    
     return 0;
 }
